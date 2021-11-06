@@ -40,11 +40,12 @@ namespace Blog{
                             .Posts
                             .AsNoTracking()
                             .Include(x => x.Author)
+                            .Include(x => x.Category)
                             .OrderByDescending(x =>x.LastUpdateDate)
                             .ToList();
 
                 foreach(var post in posts){
-                    Console.WriteLine($"{post.Title} criado por {post.Author?.Name}");
+                    Console.WriteLine($"{post.Title} criado por {post.Author?.Name} na categoria {post.Category?.Name}");
                 }
             }
         }
