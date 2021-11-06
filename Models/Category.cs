@@ -17,12 +17,12 @@ namespace Blog.Models{
         [MinLength(3)]
         [MaxLength(80)]
         [Column("Name", TypeName = "NVARCHAR")]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         [Required]
         [MinLength(3)]
         [MaxLength(80)]
-        [Column("Name", TypeName = "VARCHAR")]
+        [Column("Slug", TypeName = "VARCHAR")]
         public string Slug { get; set; } ="";
     }
 }
