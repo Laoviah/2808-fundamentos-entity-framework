@@ -6,7 +6,7 @@ namespace Blog.Models{
     // [Id] INT NOT NULL IDENTITY(1, 1),
     // [Name] VARCHAR(80) NOT NULL,
     // [Slug] VARCHAR(80) NOT NULL,
-    [Table("Categories")]
+    [Table("Category")]
     public class Category{
 
         [Key]

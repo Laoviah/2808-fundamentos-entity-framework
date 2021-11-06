@@ -1,3 +1,6 @@
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Blog.Models{
 
     // [Id] INT NOT NULL IDENTITY(1, 1),
@@ -7,8 +10,12 @@ namespace Blog.Models{
     // [Bio] TEXT NOT NULL,
     // [Image] VARCHAR(2000) NOT NULL,
     // [Slug] VARCHAR(80) NOT NULL,
+
+    [Table("User")]
     public class User{
 
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; } = "";
         public string Email { get; set; } = "";
