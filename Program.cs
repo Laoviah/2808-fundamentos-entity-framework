@@ -36,17 +36,32 @@ namespace Blog{
 
             // context.Posts.Add(post);
             // context.SaveChanges();
-                var posts = context
+                
+                
+                // var posts = context
+                //             .Posts
+                //             .AsNoTracking()
+                //             .Include(x => x.Author)
+                //             .Include(x => x.Category)
+                //             .OrderByDescending(x =>x.LastUpdateDate)
+                //             .ToList();
+
+                // foreach(var post in posts){
+                //     Console.WriteLine($"{post.Title} criado por {post.Author?.Name} na categoria {post.Category?.Name}");
+                // }
+
+                var post = context
                             .Posts
-                            .AsNoTracking()
+                            //.AsNoTracking()
                             .Include(x => x.Author)
                             .Include(x => x.Category)
                             .OrderByDescending(x =>x.LastUpdateDate)
-                            .ToList();
+                            .FirstOrDefault();
 
-                foreach(var post in posts){
-                    Console.WriteLine($"{post.Title} criado por {post.Author?.Name} na categoria {post.Category?.Name}");
-                }
+                post.Author.Name = "teste";
+
+                context.Posts.Update(post);
+                context.SaveChanges();
             }
         }
     }
