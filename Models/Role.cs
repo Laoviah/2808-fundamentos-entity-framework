@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Blog.Models{
 
     // [Id] INT NOT NULL IDENTITY(1, 1),
@@ -7,5 +9,7 @@ namespace Blog.Models{
         public int Id { get; set; }
         public string Name { get; set; } = "";
         public string Slug { get; set; } = "";
+
+        public IList<User> Users { get; set; }
     }
 }

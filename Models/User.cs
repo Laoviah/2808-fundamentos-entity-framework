@@ -1,3 +1,4 @@
+using System.Collections;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,11 +12,8 @@ namespace Blog.Models{
     // [Image] VARCHAR(2000) NOT NULL,
     // [Slug] VARCHAR(80) NOT NULL,
 
-    [Table("User")]
     public class User{
 
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public string Name { get; set; } = "";
         public string Email { get; set; } = "";
@@ -24,7 +22,8 @@ namespace Blog.Models{
         public string Image { get; set; } = "";
         public string Slug { get; set; } = "";
 
-
+        public IList<Post> Posts { get; set; }
+        public IList<Role> Roles { get; set; }
         
     }
 }
