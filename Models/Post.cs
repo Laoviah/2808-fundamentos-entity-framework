@@ -32,6 +32,7 @@ namespace Blog.Models{
         public Category Category { get; set; }
         
         [ForeignKey("AuthorId")]
-        public int AuthorId { get; set; };
+        public int AuthorId { get; set; }
+        public User Author { get; set; }
     }
 }
