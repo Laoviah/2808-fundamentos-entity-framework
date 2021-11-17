@@ -14,7 +14,7 @@ namespace Blog.Data{
 
         protected override void OnConfiguring(DbContextOptionsBuilder options){
             
-            options.UseSqlServer("Server=localhost;Database=Blog;User ID=sa;Password=123MudaR");
+            options.UseSqlServer("Server=localhost;Database=FluentBlog;User ID=sa;Password=123MudaR");
             //options.LogTo(Console.WriteLine); Mostrar os logs
         }
 

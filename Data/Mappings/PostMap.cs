@@ -36,7 +36,7 @@ namespace Blog.Data.Mappings
 
             builder.HasOne(x => x.Category)
                    .WithMany(x => x.Posts)
-                   .HasConstraintName("FK_Post_Author")
+                   .HasConstraintName("FK_Post_Category")
                    .OnDelete(DeleteBehavior.Cascade)
                    ;
             //não precisar criar a class PostTags porque o EF já associa com essa configuração e cria a tabela
